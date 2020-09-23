@@ -10,11 +10,13 @@ function getWeather(e){
     let city=document.getElementById('cities').value
     console.log(city)
     //get the weather
-    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f4a408c438be111a51787449d669ff68`
+    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=ar&appid=f4a408c438be111a51787449d669ff68`
     xhr.open('GET', apiUrl)
 xhr.onload=function(){
     if (this.status ===200){
-        dataCont.innerHTML=""
+        dataCont.innerHTML="";
+ 
+        console.log(xhr.responseText)
         let res=JSON.parse(this.responseText).main;
       console.log(res)
         let list=document.createElement('ul')
@@ -25,10 +27,9 @@ xhr.onload=function(){
         <li id="max" class="item"><img src="./images/008-umbrella.svg">${res.temp_max}<span>Max. Temprature</span></li>
         <li id="press" class="item"><img src="./images/011-hot-1.svg">${res.pressure}<span>Pressure</span></li>
         <li id="hum" class="item"><img src="./images/009-rain.svg">${res.humidity}<span>Humidity</span></li>`
-        
+        let resCoord=JSON.parse(this.responseText).coord;
         dataCont.appendChild(list)
-
-
+        
 
 
 
@@ -70,3 +71,4 @@ xhr.send();
 //   }
   
 //   document.querySelector('#find-me').addEventListener('click', geoFindMe);
+

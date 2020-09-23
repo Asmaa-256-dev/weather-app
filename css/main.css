@@ -21,12 +21,15 @@
     background-color: darkslategrey;
     color: #fff;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 #user__input {
     grid-area: input;
-    background: forestgreen;
+    background: darkslategrey;
     width: 100%;
     padding: 2vh;
 
@@ -57,13 +60,18 @@
     border: 1px solid gray;
     border-radius: 15px;
     font-size: 1.3rem;
+    cursor: pointer;
+}
+#sub:hover {
+background-color: darkslategrey;
+color:#fff;
 }
 
 
 
 #main__cont {
     grid-area: main;
-    background-color: gainsboro;
+    background-color: darkslategrey;
     
 }
 
@@ -94,10 +102,18 @@
 .list li span {
     font-size: 1rem;
 }
+.list li:hover {
+    background-color: darkslategrey;
+    color:#fff;
+    }
 #foot {
     grid-area: foot;
     background-color: darkslategrey ;
     width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #temp {
@@ -118,3 +134,4 @@
 #hum {
     grid-area:hum;
 }
+
